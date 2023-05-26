@@ -1,23 +1,40 @@
-/*
+
 #include<iostream>
 #include<fstream>
+#include<string.h>
 using namespace std;
-int main()
-{
-    char name [9],add[9];
-    ofstream out;
-    out.open("pk.txt");
-    cout<<"Name?";
-    cin>>name;
-    //outfile<<name;
-    cout<<"Address?";
-    cin>>add;
-    //outfile<<add;
-    out.close();
-    return 0 ;
-}
-*/
-
+class student{
+    char name[9];
+    int id,age;
+    public: 
+    void get(){
+        cout<<"Enter the name:";
+        cin>>name;
+        cout<<"Enter the Id:";
+        cin>>id;
+        cout<<"Enter the Age:";
+        cin>>age;
+    }
+    void show(){
+        cout<<"Name is "<<name<<endl;
+        cout<<"Id is "<<id<<endl;
+        cout<<"Age is "<<age<<endl;
+    }
+    void input(){
+            ofstream xyz("pk.txt",ios::binary|ios::app);
+            get();
+            xyz.write(reinterpret_cast<char *>(this),sizeof(*this));
+    }
+    void showrecord(){        
+        ifstream sh("pk.txt",ios::binary|ios::in);
+        while(!sh.eof()){
+            if(sh.read(reinterpret_cast<char *>(this),sizeof(*this)>0)){
+                show(); 
+            }  
+        }
+    };
+};
+/*
 //WAP to create a class student with name, id, age as data members. READ INFORMATION OF STUDENTS & IT IN FILE INTIL USER ENTERS "NO".Finally Read data from file and display them.Also search data in file according to given name by user. Program should be 
 #include<iostream>
 #include<fstream>
@@ -108,7 +125,7 @@ int main(){
     return 0 ;
 }
 
-/*
+
 // Using templete determine the greatest among three numbers.
 #include<iostream>
 using namespace std;
@@ -132,7 +149,7 @@ int main()
     cout<<"The largest number is "<<compare(a,b,c)<<endl;
     return 0 ;
 }
-/*
+
 
 #include<iostream>
 using namespace std;
