@@ -1,12 +1,3 @@
-//write a program to calculate area of circle   
-/*#include<iostream>
-using namespace std;
-int main()
-{
-    int area,length,breadth 
-    return 0 ;
-}
-
 
 #include<iostream>
 #include<string>
