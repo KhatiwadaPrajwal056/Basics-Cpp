@@ -92,7 +92,6 @@ void Patient::setData() // 1
         cout << "\n\t\t Enter your Mobile number :- ";
         gets(mobileNumber);
         break;
-    
     case 3:
         cout << "\n\t\t Enter your name :-  ";
         gets(name);
