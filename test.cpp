@@ -1,3 +1,4 @@
+// addition and sub
 #include<iostream>
 using namespace std;
 int add(int [],int [],int [],int);
