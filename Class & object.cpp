@@ -1,4 +1,4 @@
-/*
+ /*
 //Wap to create a class named 'emplpoye' with name, id,salary as data member & getdata(), dusplaydata() as member functions to read data of n employee
 #include<iostream>
 #include<string.h>
